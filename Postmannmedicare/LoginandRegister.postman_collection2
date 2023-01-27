@@ -1,0 +1,144 @@
+{
+	"info": {
+		"_postman_id": "485ddae1-c303-4dd9-8e17-92e915519bc1",
+		"name": "LoginandRegister",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23152090"
+	},
+	"item": [
+		{
+			"name": "Loginmedicare",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/medicare/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"medicare",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "showallproducts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/medicare/show/all/products ",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"medicare",
+								"show",
+								"all",
+								"products "
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Membership",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"Envvar\", \"variable_value\");\r",
+									"pm.globals.set(\"Global_Key\", \"variable_value\");\r",
+									"pm.collectionVariables.set(\"collectionVariables\", \"variable_value\");\r",
+									"pm.variables.set(\"LocalVariables\", \"This is Local values\");\r",
+									"console.log(\"Get the variables\");\r",
+									"pm.environment.get(\"Envvar\");\r",
+									"pm.globals.get(\"Global_Key\");\r",
+									"console.log(pm.collectionVariables.get('collectionVariables'));\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"First Name\": \"{{name}}\",\r\n\"Last Name\":\"{{Lastname}}\",\r\n\"Email\":\"{{Email}}\",\r\n\"Contact Number\":\"{{Mobilenumber}}\",\r\n\"Password\":\"{{Password}}\",\r\n\"Confirm Password\":\"{{ConfirmPassword}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/medicare/membership?execution=e1s1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"medicare",
+								"membership"
+							],
+							"query": [
+								{
+									"key": "execution",
+									"value": "e1s1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.test(\"Status code is 200\", function () {",
+					"    pm.response.to.have.status(200);",
+					"});"
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "collectionVariables",
+			"value": ""
+		}
+	]
+}

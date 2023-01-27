@@ -1,0 +1,57 @@
+package com.Admin;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class AdminLogin {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		System.setProperty("webdriver.chrome.driver", "./Browser/chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+				driver.get("http://localhost:8080/medicare/");
+				driver.manage().window().maximize();
+				Thread.sleep(2000);
+				WebElement Signup=driver.findElement(By.xpath("//li/a[contains(text(),'Login')]"));
+				Signup.click();
+		WebElement Usernaem=driver.findElement(By.xpath("//input[@name='username']"));
+		Usernaem.sendKeys("vk@gmail.com");
+		WebElement password=driver.findElement(By.xpath("//input[@name='password']"));
+		password.sendKeys("admin");
+		WebElement Login=driver.findElement(By.xpath("//input[@type='submit']"));
+		Login.click();
+		WebElement FirstLastname=driver.findElement(By.xpath("//li/a[(@class='btn btn-default dropdown-toggle')]"));
+		FirstLastname.click();
+		WebElement ManageProduct=driver.findElement(By.xpath("//li/a[contains(text(),'Manage Product')]"));
+		ManageProduct.click();
+		
+		WebElement name=driver.findElement(By.xpath("//input[@name='name']"));
+		name.sendKeys("Arcnic");
+		WebElement brand=driver.findElement(By.xpath("//input[@name='brand']"));
+		brand.sendKeys("reddy");
+		WebElement description=driver.findElement(By.xpath("//input[@name='description']"));
+		description.sendKeys("for infection in stomach");
+		WebElement unitPrice=driver.findElement(By.xpath("//input[@name='unitPrice']"));
+		unitPrice.sendKeys("60");
+		WebElement quantity=driver.findElement(By.xpath("//input[@name='quantity']"));
+		quantity.sendKeys("600");
+		WebElement file=driver.findElement(By.xpath("//input[@name='file']"));
+		file.click();
+		//select[@name='categoryId']
+		//select/option[contains(text(),'Antibiotics')]
+		//button[@class='btn btn-warning btn-xs']
+		//input[@placeholder='Category Name']
+		//textarea[@placeholder='Enter category description here!']
+		
+	
+	
+	
+	}
+
+
+
+	}
+
+

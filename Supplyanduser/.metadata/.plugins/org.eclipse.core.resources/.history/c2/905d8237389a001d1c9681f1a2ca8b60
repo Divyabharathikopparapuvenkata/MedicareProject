@@ -1,0 +1,10 @@
+package com.supplier;
+
+public class SupplierSignup {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
